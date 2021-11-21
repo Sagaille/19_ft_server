@@ -1,0 +1,28 @@
+COMMANDS FOR FT_SERVER (INSTEAD OF DOCKER-MACHINE START ETC)
+
+sudo su // gives super powers
+
+docker build -t "docker_image" .
+
+service nginx stop // make sure nginx is stopped
+
+docker run -td -p 80:80 -p 443:443 "docker_image":latest
+
+docker exec -ti "container ID" /bin/bash // open terminal inside container (in this case debian)
+
+
+
+
+
+to refresh + start over :
+docker system prune -a // Remove all unused containers, networks, images 
+docker stop "container ID"
+
+// Other cmds
+
+service status nginx
+service --status-all
+docker ps
+
+
+refs : https://github.com/khodizoda/42_ft_server
